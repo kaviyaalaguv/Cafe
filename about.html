@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css"> 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Our Cafe</title>
@@ -16,11 +14,13 @@
         .container {
             display: flex;
             height: 100vh;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .left-side {
             flex: 1;
             background: url("about-bg.jpg") no-repeat center center/cover;
+            height: 100vh; /* Full height */
         }
 
         .right-side {
@@ -31,8 +31,8 @@
             background-color: #f8f8f8; /* Background color for the page */
             background-image: url("about-our-cafe.jpg");
             background-repeat: no-repeat;
-            background: size 89px;
-
+            background-size: cover;
+            height: 100vh; /* Full height */
         }
 
         .content-box {
@@ -55,14 +55,55 @@
             line-height: 1.6;
             color: #555;
         }
+
         .navbar-links a {
             color: #6F4E37; /* Coffee brown color */
         }
-        
+
         .navbar-links a:hover {
             color: #8B5E3C; /* Slightly lighter brown for hover effect (optional) */
         }
-        
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack sections vertically */
+            }
+
+            .left-side, .right-side {
+                flex: none;
+                width: 100%; /* Full width on small screens */
+                height: auto; /* Remove full height */
+            }
+
+            .content-box {
+                max-width: 90%; /* Reduce width on smaller screens */
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-box {
+                max-width: 95%; /* Further reduce width on extremely small screens */
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -89,10 +130,8 @@
                     atmosphere and delicious options for everyone.
                 </p>
             </div>
-            
         </div>
     </div>
-   
-    
 </body>
 </html>
+
