@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"> 
-
     <title>Contact Us</title>
     <style>
         /* General contact section styles */
@@ -13,12 +12,14 @@
             justify-content: space-between;
             height: 100vh; /* Full page height */
             padding: 0;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         /* Container for both sections */
         .contact-container {
             display: flex;
             width: 100%;
+            flex-wrap: wrap; /* Allow wrapping of sections */
         }
 
         /* Left Section: Contact Details */
@@ -100,7 +101,7 @@
         }
 
         button:hover {
-            background-color:rgba(139, 69, 19, 0.1) ;
+            background-color: rgba(139, 69, 19, 0.1);
         }
 
         /* Style for Open Maps button */
@@ -121,6 +122,8 @@
         .open-maps-btn:hover {
             background-color: #0056b3;
         }
+
+        /* Navbar link styles */
         .navbar-links a {
             color: #6F4E37; /* Coffee brown color */
         }
@@ -128,7 +131,40 @@
         .navbar-links a:hover {
             color: #8B5E3C; /* Slightly lighter brown for hover effect (optional) */
         }
-        
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .contact-left, .contact-right {
+                width: 100%; /* Stack the sections on small screens */
+                padding: 20px;
+            }
+
+            .contact-left .contact-box {
+                padding: 30px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-left .contact-box {
+                padding: 20px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-left p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,8 +227,5 @@
             </div>
         </div>
     </section>
-    
-    
 </body>
-
 </html>
