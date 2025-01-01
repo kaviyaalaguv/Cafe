@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+
+    <title>Contact Us</title>
+    <style>
+        /* General contact section styles */
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            height: 100vh; /* Full page height */
+            padding: 0;
+        }
+
+        /* Container for both sections */
+        .contact-container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Left Section: Contact Details */
+        .contact-left {
+            width: 50%;
+            background-image: url("contact-bg.jpg"); /* Background image for left section */
+            background-size: cover;
+            background-position: center;
+            color: rgb(8, 8, 8); /* Text color for the left section */
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        /* Wrapper for the contact text with transparent white box */
+        .contact-left .contact-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+            padding: 70px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for the box */
+        }
+
+        .contact-left h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-left p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Right Section: Contact Form */
+        .contact-right {
+            width: 50%;
+            background-image: url("about-chai.jpg"); /* Background image for right section */
+            background-size: cover;
+            background-position: center;
+            padding: 70px;
+            box-sizing: border-box;
+        }
+
+        /* Form styles */
+        .contact-form {
+            background-color: rgba(139, 69, 19, 0.6); /* Transparent brown background */
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Submit button style */
+        button {
+            padding: 10px 20px;
+            background-color: rgba(139, 69, 19, 0.6); /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color:rgba(139, 69, 19, 0.1) ;
+        }
+
+        /* Style for Open Maps button */
+        .open-maps-btn {
+            margin-top: 20px;
+            padding: 12px 0px;
+            background-color: #007BFF; /* Blue button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: block; /* Ensures the button is on a new line */
+            width: 100%; /* Ensures it takes the full width of the container */
+            text-decoration: none;
+        }
+
+        .open-maps-btn:hover {
+            background-color: #0056b3;
+        }
+        .navbar-links a {
+            color: #6F4E37; /* Coffee brown color */
+        }
+        
+        .navbar-links a:hover {
+            color: #8B5E3C; /* Slightly lighter brown for hover effect (optional) */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul class="navbar-links">
+            <li><a href="index.html" class="active"><strong>Info</strong></a></li>
+            <li><a href="menu.html"><strong>Menu</strong></a></li>
+            <li><a href="about.html"><strong>About</strong></a></li>
+            <li><a href="contact.html"><strong>Contact</strong></a></li>
+        </ul>
+    </div>
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <!-- Left Section: Contact Details -->
+            <div class="contact-left">
+                <div class="contact-box">
+                    <h2>Contact Us</h2>
+                    <p>We’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us.</p>
+
+                    <p><strong>Visit Us:</strong></p>
+                    Antique Cafe,<br>
+                    123 Heritage Lane,<br>
+                    Old Town, New York City
+
+                    <p><strong>Call Us:</strong></p>
+                    +91 98765 43210
+
+                    <p><strong>Email Us:</strong></p>
+                    info@antiquecafe.com
+
+                    <!-- Open Maps Button -->
+                    <a href="https://www.google.com/maps?q=Antique+Cafe,123+Heritage+Lane,Old+Town,New+York+City" class="open-maps-btn" target="_blank">
+                        Open in Maps
+                    </a>
+                </div>
+                <footer id="footer" style="color: #fdfcfc;" >
+                    <div class="footer-content">
+                        <br><br><p>&copy; 2024 Antique Cafe. All rights reserved.</p>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- Right Section: Contact Form -->
+            <div class="contact-right">
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+
+</html>
