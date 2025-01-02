@@ -135,6 +135,23 @@ body {
     box-shadow: none; /* Ensure no box shadow is applied */
     border: none; /* Ensure no border appears */
 }
+/* Remove default focus styles */
+.hamburger-menu:focus,
+.hamburger-menu:active {
+    outline: none; /* Remove focus outline */
+    background: none; /* Remove background change */
+    box-shadow: none; /* Remove any shadow effects */
+}
+
+/* Navbar links focus and active */
+.navbar-links a:focus,
+.navbar-links a:active {
+    outline: none; /* Remove default outline */
+    background: none; /* Keep consistent background */
+    color: white; /* Ensure text color consistency */
+    box-shadow: none; /* Prevent any shadow effects */
+}
+
 
 
 /* Navbar for larger screens */
