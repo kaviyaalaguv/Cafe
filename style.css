@@ -1,0 +1,302 @@
+.intro-box {
+    background-color: rgb(96 35 19 / 50%);
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    z-index: 2;
+    position: relative;
+    font-size: larger;
+}
+.home-section {
+    width: 100%;
+    height: 100vh;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    overflow: hidden; 
+}
+
+.home-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    background-repeat: no-repeat;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+@media screen and (max-width: 768px) {
+    .home-section img {
+        width: 110%; 
+        left: -5%; 
+    }
+}
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f4f3f3;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align items with space between */
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    backdrop-filter: blur(5px);
+}
+
+/* Hamburger menu */
+/* Hamburger menu button */
+.hamburger-menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    transform: rotate(90deg); /* Rotate on hover */
+    color: #a0522d; /* Change color */
+}
+
+/* Navbar links (hidden by default) */
+.navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(30, 30, 30, 0.95); /* Darker background */
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 220px;
+    padding: 5px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transform: scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.navbar-links.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1); /* Expand smoothly */
+}
+
+/* Individual menu items */
+.navbar-links li {
+    margin: 10px 0;
+    list-style: none;
+}
+
+.navbar-links a {
+    color: white; /* Text color */
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block; /* Ensure clickable area covers full width */
+    text-align: center;
+}
+
+.navbar-links a:hover {
+    background-color: #a0522d; /* Highlight background */
+    color: white; /* Ensure contrast */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Display hamburger menu button on all screens */
+.hamburger-menu {
+    display: block;
+}
+
+/* Navbar for larger screens */
+@media screen and (min-width: 768px) {
+    .hamburger-menu {
+        display: none; /* Hide hamburger on larger screens */
+    }
+
+    .navbar-links {
+        display: flex !important; /* Always show links on larger screens */
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .navbar-links li {
+        margin: 0;
+    }
+
+    .navbar-links a {
+        padding: 0;
+    }
+}
+
+
+/* Menu Section */
+#menu {
+    background-image: url('cafe-menu.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+#menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#menu h2 {
+    font-size: 2rem;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    top: 100px;
+    position: relative;
+    z-index: 2;
+}
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+}
+
+.menu-box {
+    background-color: rgba(96, 44, 4, 0.5);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 45%; /* Make sure menu items are flexible */
+    margin-bottom: 40px;
+}
+
+.menu-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.menu-item-details {
+    text-align: left;
+}
+
+.menu-item-details p {
+    margin: 0;
+}
+
+.menu-item-details p.price {
+    font-size: 0.9rem;
+}
+/* Overall section styles */
+.contact-section {
+    display: flex; /* Flex container for horizontal layout */
+    flex-direction: row; /* Ensure left and right sections */
+    justify-content: space-between;
+    padding: 50px;
+    gap: 20px; /* Space between left and right sections */
+}
+
+/* Left side: Contact details */
+.contact-text-box {
+    width: 48%; /* Take up 48% of the width for left section */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('left-background.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+/* Right side: Contact form */
+.contact-form-box {
+    width: 48%; /* Take up 48% of the width for right section */
+    background-color: rgba(139, 69, 19, 0.6); /* Transparent brown background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('right-background.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Form fields styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Submit button style */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #45a049;
+}
