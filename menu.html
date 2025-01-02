@@ -1,0 +1,219 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f4f3f3;
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Align items with space between */
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Hamburger menu */
+        /* Hamburger menu button */
+        .hamburger-menu {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .hamburger-menu:hover {
+            transform: rotate(90deg); /* Rotate on hover */
+            color: #a0522d; /* Change color */
+        }
+        
+        /* Navbar links (hidden by default) */
+        .navbar-links {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(30, 30, 30, 0.95); /* Darker background */
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            width: 220px;
+            padding: 5px;
+            border-radius: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            transform: scale(0.9);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .navbar-links.show {
+            display: flex;
+            opacity: 1;
+            transform: scale(1); /* Expand smoothly */
+        }
+        
+        /* Individual menu items */
+        .navbar-links li {
+            margin: 10px 0;
+            list-style: none;
+        }
+        
+        .navbar-links a {
+            color: white; /* Text color */
+            font-size: 1.2rem;
+            padding: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: block; /* Ensure clickable area covers full width */
+            text-align: center;
+        }
+        
+        .navbar-links a:hover {
+            background-color: #a0522d; /* Highlight background */
+            color: white; /* Ensure contrast */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Display hamburger menu button on all screens */
+        .hamburger-menu {
+            display: block;
+        }
+        @media screen and (max-width: 600px) {
+            .hamburger-menu {
+                display: block; /* Show hamburger menu on mobile */
+            }
+        
+            /* Navbar links should be hidden on mobile */
+            .navbar-links {
+                display: none;
+            }
+        }
+        
+        /* Navbar for larger screens */
+        @media screen and (min-width: 768px) {
+            .hamburger-menu {
+                display: none; /* Hide hamburger on larger screens */
+            }
+        
+            .navbar-links {
+                display: flex !important; /* Always show links on larger screens */
+                flex-direction: row;
+                position: static;
+                background: none;
+                box-shadow: none;
+                padding: 0;
+                opacity: 1;
+                transform: none;
+            }
+        
+            .navbar-links li {
+                margin: 0;
+            }
+        
+            .navbar-links a {
+                padding: 0;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<section id="menu">
+    <h2>Our Cafe Menu</h2>
+    <div class="menu-container">
+        <!-- Hot Drinks Section -->
+        <div class="menu-box">
+            <h3>Hot Drinks</h3>
+            <div class="menu-item">
+                <img src="Hot-cappucino.jpg" alt="Hot Cappuccino">
+                <div class="menu-item-details">
+                    <p>Hot Cappuccino</p>
+                    <p class="price">Small: $5.50 | Large: $6.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hot-americanno.jpg" alt="Hot Americano">
+                <div class="menu-item-details">
+                    <p>Hot Americano</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hot-latte.jpg" alt="Hot Latte">
+                <div class="menu-item-details">
+                    <p>Hot Latte</p>
+                    <p class="price">Small: $5.00 | Large: $6.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hot-chocolate.jpg" alt="Hot Chocolate">
+                <div class="menu-item-details">
+                    <p>Hot Chocolate</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iced Drinks Section -->
+        <div class="menu-box">
+            <h3>Iced Drinks</h3>
+            <div class="menu-item">
+                <img src="Iced-cappuccino.jpg" alt="Iced Cappuccino">
+                <div class="menu-item-details">
+                    <p>Iced Cappuccino</p>
+                    <p class="price">Small: $5.50 | Large: $6.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Iced-americano.jpg" alt="Iced Americano">
+                <div class="menu-item-details">
+                    <p>Iced Americano</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Iced-milklatte.jpg" alt="Iced Milk Latte">
+                <div class="menu-item-details">
+                    <p>Iced Milk Latte</p>
+                    <p class="price">Small: $5.00 | Large: $6.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Iced-espresso.jpg" alt="Iced Espresso">
+                <div class="menu-item-details">
+                    <p>Iced Espresso</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar">
+        <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="index.html"><strong>Info</strong></a></li>
+            <li><a href="menu.html"><strong>Menu</strong></a></li>
+            <li><a href="about.html"><strong>About</strong></a></li>
+            <li><a href="contact.html"><strong>Contact</strong></a></li>
+        </ul>
+    </div>
+</section>
+<script>
+    function toggleMenu() {
+        const navbarLinks = document.getElementById('navbarLinks');
+        navbarLinks.classList.toggle('show');
+    }
+</script>
+</body>
+</html>
