@@ -1,0 +1,344 @@
+<head>
+    <style>
+/* Global Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Menu Section */
+#menu {
+    background-image: url('cafe-menu.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove padding */
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+#menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+#menu h2 {
+    font-size: 2rem;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    top: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+    padding: 0;
+}
+
+.menu-box {
+    background-color: rgba(96, 44, 4, 0.5);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 45%; /* Make menu items flexible */
+    margin-bottom: 40px;
+    min-width: 250px; /* Ensures a minimum width for smaller screens */
+}
+
+.menu-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.menu-item-details {
+    text-align: left;
+}
+
+.menu-item-details p {
+    margin: 0;
+}
+
+.menu-item-details p.price {
+    font-size: 0.9rem;
+}
+
+/* Navbar responsiveness */
+.navbar {
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    align-items: start;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+/* Navbar links alignment and prevent spreading */
+.navbar-links {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    list-style: none;
+    gap: 2px; /* Add space between links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-links a {
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px; /* Add some padding for better spacing */
+    display: block; /* Make the links block-level elements */
+    gap: 5px;
+    align-self: flex-start;
+}
+
+.navbar-links a:hover {
+    background-color: #a0522d; /* Highlight background */
+    color: white; /* Ensure contrast */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.hamburger-menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        flex-direction: column; /* Stack the links vertically on small screens */
+        width: 100%;
+        display: none; /* Hidden by default */
+    }
+
+    .navbar-links.show {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-links li a {
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 1px;
+}
+.navbar-links a:hover {
+    background-color: #a0522d; /* Highlight background */
+    color: white; /* Ensure contrast */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+.navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+}
+
+.hamburger-menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    #menu h2 {
+        font-size: 1.5rem;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        padding: 0 10px; /* Prevent content touching edges */
+    }
+
+    .menu-box {
+        flex: 1 1 100%; /* Stack menu boxes vertically */
+        min-width: 100%; /* Make them full-width */
+        margin-bottom: 20px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Hidden by default */
+    }
+
+    .navbar-links.show {
+        display: flex; /* Display when toggled */
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-links li a {
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-box {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    .menu-item img {
+        width: 50px; /* Smaller images on smaller screens */
+        height: 50px;
+    }
+
+    .menu-item-details p {
+        font-size: 0.9rem; /* Adjust text size for smaller screens */
+    }
+}
+
+    </style>
+</head>
+
+<section id="menu">
+    <div class="navbar">
+        <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="index.html"><strong>Info</strong></a></li>
+            <li><a href="menu.html"><strong>Menu</strong></a></li>
+            <li><a href="about.html"><strong>About</strong></a></li>
+            <li><a href="contact.html"><strong>Contact</strong></a></li>
+        </ul>
+    </div>
+    <h2>Our Cafe Menu</h2>
+    
+    <div class="menu-container">
+        <!-- Hot Drinks Section -->
+        <div class="menu-box">
+            <h3>Hot Drinks</h3>
+            <div class="menu-item">
+                <img src="Hot-cappucino.jpg" alt="Hot Cappuccino">
+                <div class="menu-item-details">
+                    <p>Hot Cappuccino</p>
+                    <p class="price">Small: $5.50 | Large: $6.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hot-americanno.jpg" alt="Hot Americano">
+                <div class="menu-item-details">
+                    <p>Hot Americano</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hot-latte.jpg" alt="Hot Latte">
+                <div class="menu-item-details">
+                    <p>Hot Latte</p>
+                    <p class="price">Small: $5.00 | Large: $6.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hot-chocolate.jpg" alt="Hot Chocolate">
+                <div class="menu-item-details">
+                    <p>Hot Chocolate</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iced Drinks Section -->
+        <div class="menu-box">
+            <h3>Iced Drinks</h3>
+            <div class="menu-item">
+                <img src="Iced-cappuccino.jpg" alt="Iced Cappuccino">
+                <div class="menu-item-details">
+                    <p>Iced Cappuccino</p>
+                    <p class="price">Small: $5.50 | Large: $6.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Iced-americano.jpg" alt="Iced Americano">
+                <div class="menu-item-details">
+                    <p>Iced Americano</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Iced-milklatte.jpg" alt="Iced Milk Latte">
+                <div class="menu-item-details">
+                    <p>Iced Milk Latte</p>
+                    <p class="price">Small: $5.00 | Large: $6.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Iced-espresso.jpg" alt="Iced Espresso">
+                <div class="menu-item-details">
+                    <p>Iced Espresso</p>
+                    <p class="price">Small: $4.50 | Large: $5.50</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<script>
+    function toggleMenu() {
+        const navbarLinks = document.getElementById('navbarLinks');
+        navbarLinks.classList.toggle('show');
+    }
+</script>
