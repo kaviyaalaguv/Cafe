@@ -50,7 +50,8 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    backdrop-filter: blur(5px); 
 }
 
 /* Navbar Links */
@@ -130,8 +131,9 @@ body {
 
 #menu h2 {
     font-size: 2rem;
-    margin-top: 0px;
-    margin-bottom: 70px;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    top: 70px;
     position: relative;
     z-index: 2;
 }
