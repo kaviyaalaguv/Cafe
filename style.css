@@ -123,17 +123,19 @@ body {
 .hamburger-menu {
     display: block;
 }
-/* Remove default focus outline */
+
 .hamburger-menu {
-    outline: none; /* Prevent the green box */
+    outline: none; /* Prevent browser's default outline */
+    border: none; /* Remove any default border */
 }
 
-/* Add a custom focus style for accessibility (optional) */
+/* Remove persistent green box when focused */
 .hamburger-menu:focus {
-    outline: 2px solid transparent; /* Completely transparent */
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
-    border-radius: 5px;
+    outline: none;
+    box-shadow: none; /* Ensure no box shadow is applied */
+    border: none; /* Ensure no border appears */
 }
+
 
 /* Navbar for larger screens */
 @media screen and (min-width: 768px) {
