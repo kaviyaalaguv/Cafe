@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Cafe</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 1000vh;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .left-side {
+            flex: 1;
+            background: url("about-bg.jpg") no-repeat center center/cover;
+            height: 100vh; /* Full height */
+            background-size: 100%;
+            background-position: center;
+        }
+
+        .right-side {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 0px;
+            align-items: center;
+            background-color: #f8f8f8; /* Background color for the page */
+            background-image: url("about-our-cafe.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh; /* Full height */
+            background-position: center;
+        }
+
+        .content-box {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f4f3f3;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Hamburger menu */
+        .hamburger-menu {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: block;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            transform: rotate(90deg); /* Rotate on hover */
+            color: #a0522d; /* Change color */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack sections vertically */
+            }
+
+            .left-side, .right-side {
+                flex: none;
+                width: 100%; /* Full width on small screens */
+                height: auto; /* Remove full height */
+                background-size: cover; /* Ensure images cover full height */
+                background-position: center; /* Ensure image is centered */
+            }
+
+            .content-box {
+                max-width: 90%; /* Reduce width on smaller screens */
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        /* For very small devices like phones in portrait mode */
+        @media (max-width: 480px) {
+            .left-side, .right-side {
+                background-size: cover !important;
+            }
+
+            .content-box {
+                max-width: 95%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-dark text-white p-2 fixed-top d-flex justify-content-between align-items-center">
+            <!-- Hamburger Menu -->
+            <button class="btn text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                ☰
+            </button>
+        </div>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-white" href="index.html"><strong>Info</strong></a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="menu.html"><strong>Menu</strong></a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html"><strong>About</strong></a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contact.html"><strong>Contact</strong></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Left Side -->
+        <div class="left-side"></div>
+
+        <!-- Right Side -->
+        <div class="right-side">
+            <div class="content-box">
+                <h1>About Our Cafe</h1>
+                <p>
+                    Welcome to our cozy cafe, where we serve the best coffee and treats in town! 
+                    Whether you're here to relax, work, or meet friends, our cafe offers a warm 
+                    atmosphere and delicious options for everyone.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
